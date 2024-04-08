@@ -174,3 +174,7 @@ GROUP BY
 ![image](https://github.com/mwadegraff/DeGraff_Week_4_Coursera_Final/assets/7571381/6eca085f-ebeb-4570-a18c-5310c0fb4e94)
 ![image](https://github.com/mwadegraff/DeGraff_Week_4_Coursera_Final/assets/7571381/72d281ca-7cad-4103-8f95-c008cdbfef42)
 
+## 5. Compute lift and p-value
+Use the https://thumbtack.github.io/abba/demo/abba.html to compute the lifts in metrics and the p-values for the binary metrics ( 30 day order binary and 30 day view binary) using a interval 95% confidence. 
+
+In both cases the p-values are too low for this to be a statistically meaningful result.
