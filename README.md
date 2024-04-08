@@ -2,19 +2,26 @@
 
 ## 1. Data Quality Check
 
-First step is to review data
+We are running an experiment at an item-level, which means all users who visit will see the same page, but the layout of different item pages may differ.
+Compare this table to the assignment events we captured for user_level_testing.
+Does this table have everything you need to compute metrics like 30-day view-binary?
+     This table does not have a date the test started so not sure how we can identify which orders were affected.
+    
 ```SQL
 SELECT * 
 FROM dsv1069.final_assignments_qa;
 ```
 
 ## 2. Reformat the Data
-I reformatted the table by unioning cases where each item is assigned.
+Reformat the final_assignments_qa to look like the final_assignments table, filling in any missing values with a placeholder of the appropriate data type.
+We are running an experiment at an item-level, which means all users who visit will see the same page, but the layout of different item pages may differ.
+Compare this table to the assignment events we captured for user_level_testing.
+### Does this table have everything you need to compute metrics like 30-day view-binary? 
+Yes, now that the date has been added in.
+
 ```SQL
 SELECT
-
   *
-  
 FROM
 (
         SELECT 
@@ -82,6 +89,7 @@ ORDER BY item_id, test_id
 ```
 
 ## 3. Compute Order Binary
+Use this table to compute order_binary for the 30 day window after the test_start_date for the test named item_test_2
 
 ```SQL
 SELECT 
@@ -121,7 +129,7 @@ GROUP BY
 ![image](https://github.com/mwadegraff/DeGraff_Week_4_Coursera_Final/assets/7571381/f552980b-fb7e-4057-bab4-fd9593328e21)
 
 ## 4. Compute View Binary
-
+Use this table to compute view_binary for the 30 day window after the test_start_date for the test named item_test_2
 ```SQL
 -- Use this table to 
 -- compute view_binary for the 30 day window after the test_start_date
